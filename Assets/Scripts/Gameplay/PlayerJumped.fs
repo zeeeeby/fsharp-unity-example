@@ -10,8 +10,10 @@ open Platformer.Mechanics
 type PlayerJumped() =
     inherit Simulation.Event<PlayerJumped>()
 
-    // Используем auto-property для имитации публичного поля C#
     member val player : PlayerController = null with get, set
 
     override this.Execute() =
         Debug.Log("Jump event executed from F#!")
+        // if this.player.audioSource <> null && this.player.jumpAudio <> null then
+            // this.player.audioSource.PlayOneShot(this.player.jumpAudio)
+
